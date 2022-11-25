@@ -14,6 +14,39 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
+  const openPopup = () => {
+    if(!window.mootrack)
+          {
+            !(function (t, n, e, o, a) {
+              function d(t) {
+                var n = ~~(Date.now() / 3e5),
+                  o = document.createElement(e);
+                (o.async = !0), (o.src = t + "?ts=" + n);
+                var a = document.getElementsByTagName(e)[0];
+                a.parentNode.insertBefore(o, a);
+              }
+              (t.MooTrackerObject = a),
+                (t[a] =
+                  t[a] ||
+                  function () {
+                    return t[a].q
+                      ? void t[a].q.push(arguments)
+                      : void (t[a].q = [arguments]);
+                  }),
+                window.attachEvent
+                  ? window.attachEvent("onload", d.bind(this, o))
+                  : window.addEventListener("load", d.bind(this, o), !1);
+            })(
+              window,
+              document,
+              "script",
+              "https://cdn.stat-track.com/statics/moosend-tracking.min.js",
+              "mootrack"
+            )
+          }{" "}
+          mootrack('loadForm', 'ddba1e4e18b14d5ca3115b324a32bd3e')
+  }
+
   return (
     <Layout
       permalink={'/'}
@@ -22,6 +55,9 @@ function Home() {
       <Head>
       <script async defer data-website-id="b0133a07-1c59-49aa-8f9c-7a0c25711718" 
               src="https://behaviortree-cpp-umami.netlify.app/umami.js">
+      </script>
+      <script src="https://cdn.stat-track.com/statics/moosend-tracking.min.js" data-website-id="ddba1e4e18b14d5ca3115b324a32bd3e">
+
       </script>
       </Head>
       <div className={clsx('hero hero--light', styles.heroBanner)}>
@@ -41,6 +77,14 @@ function Home() {
                     Tutorials
                   </Link>
                 </div>
+                <br />
+                <button
+                    data-mooform-id="ddba1e4e-18b1-4d5c-a311-5b324a32bd3e"
+                    className="button button--outline button--primary button--lg"
+                    onClick={openPopup}
+                  >
+                    Activate Click Trigger
+                  </button>
               </div>
             </div>
             <div className="col col--5">
