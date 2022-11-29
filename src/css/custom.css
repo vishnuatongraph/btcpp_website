@@ -39,7 +39,7 @@ article {
     font-weight: bold;
   }
 }
-@media (max-width: 567px) {
+@media (max-width: 580px) {
   .navbar__title {
     font-size: 14px;
   }

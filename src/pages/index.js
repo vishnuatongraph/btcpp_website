@@ -9,8 +9,8 @@ import clsx from "clsx";
 import styles from "./index.module.css";
 import EditorVideo from "@site/static/img/editor.mp4";
 import Head from "@docusaurus/Head";
-import Carousel from "react-bootstrap/Carousel";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 function Home() {
   const context = useDocusaurusContext();
@@ -120,16 +120,16 @@ function Home() {
               </ul>
             </div>
             <div className="col col--6 col--offset-1">
-              <Carousel interval={2000} controls={false}>
-                <Carousel.Item>
+              <Carousel autoPlay showThumbs={false} infiniteLoop={true}>
+                <div>
                   <img src={useBaseUrl("img/image02.jpg")} alt="robots" />
-                </Carousel.Item>
-                <Carousel.Item>
-                <img src={useBaseUrl("img/image02.jpg")} alt="robots" />
-                </Carousel.Item>
-                <Carousel.Item>
-                <img src={useBaseUrl("img/image02.jpg")} alt="robots" />
-                </Carousel.Item>
+                </div>
+                <div>
+                  <img src={useBaseUrl("img/image02.jpg")} alt="robots" />
+                </div>
+                <div>
+                  <img src={useBaseUrl("img/image02.jpg")} alt="robots" />
+                </div>
               </Carousel>
             </div>
           </div>
