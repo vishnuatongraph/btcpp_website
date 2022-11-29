@@ -101,6 +101,7 @@ export default function Groot() {
                   Keep me up to date
                 </button>
               </div>
+              <br />
             </div>
             <div className="col col--6">
               <img
