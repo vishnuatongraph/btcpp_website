@@ -5,6 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./groot.module.css";
 import Table from "react-bootstrap/Table";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import Head from "@docusaurus/Head";
 function Check(props) {
   return <img src={useBaseUrl("img/check.png")} width="15" alt="yes" />;
 }
@@ -63,6 +64,9 @@ export default function Groot() {
   return (
     <Layout title="Groot" description="Groot Editor">
       {/* groot intro */}
+      <Head>
+      <script defer data-domain="behaviortree.dev" src="https://plausible.io/js/script.file-downloads.js"></script>
+      </Head>
       <div className={`styles.sectionText`}>
         <div className={`container text--left ${styles.sectionText}`}>
           <div className="row">
