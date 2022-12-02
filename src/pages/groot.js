@@ -13,9 +13,14 @@ function Cross(props) {
   return <img src={useBaseUrl("img/cross.png")} width="15" alt="no" />;
 }
 export default function Groot() {
-
   useEffect(() => {
     openPopup();
+    (window.plausible =
+      window.plausible ||
+      function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      })
+    console.log(window, "window");
   }, []);
 
   const renderTooltip = (message, props) => {
@@ -59,13 +64,23 @@ export default function Groot() {
       (" ");
     }
     mootrack("loadForm", "419144d798774876bcfcd1e1f0b6a2ad");
+    plausible('Signup');
   };
 
   return (
     <Layout title="Groot" description="Groot Editor">
       {/* groot intro */}
       <Head>
-      <script defer data-domain="behaviortree.dev" src="https://plausible.io/js/script.file-downloads.js"></script>
+        <script
+          defer
+          data-domain="behaviortree.dev"
+          src="https://plausible.io/js/script.file-downloads.js"
+        ></script>
+        <script
+          defer
+          data-domain="behaviortree.dev"
+          src="https://plausible.io/js/script.js"
+        ></script>
       </Head>
       <div className={`styles.sectionText`}>
         <div className={`container text--left ${styles.sectionText}`}>
@@ -76,15 +91,13 @@ export default function Groot() {
                 <b>Groot</b> is the Integrated Development Environment to build
                 and debug Behavior Trees. It allows you to:
               </p>
-                <ul>
-                  <li>
-                    Create and edit trees, using a drag and drop interface.
-                  </li>
-                  <li>Monitor the state of a tree remotely in real-time.</li>
-                  <li>
-                    Debug and test your behaviors (<b>new in version 2</b>)
-                  </li>
-                </ul>
+              <ul>
+                <li>Create and edit trees, using a drag and drop interface.</li>
+                <li>Monitor the state of a tree remotely in real-time.</li>
+                <li>
+                  Debug and test your behaviors (<b>new in version 2</b>)
+                </li>
+              </ul>
               <h3>Groot 2 is under development (preview now available)</h3>
               <p>
                 We are reimaginging Groot to be easier to use and more scalable,
