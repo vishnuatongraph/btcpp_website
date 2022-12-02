@@ -20,7 +20,6 @@ export default function Groot() {
       function () {
         (window.plausible.q = window.plausible.q || []).push(arguments);
       })
-    console.log(window, "window");
   }, []);
 
   const renderTooltip = (message, props) => {
