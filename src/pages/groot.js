@@ -73,6 +73,7 @@ export default function Groot() {
       <Head>
         <script
           defer
+          file-types="run,AppImage"
           data-domain="behaviortree.dev"
           src="https://plausible.io/js/script.file-downloads.js"
         ></script>
